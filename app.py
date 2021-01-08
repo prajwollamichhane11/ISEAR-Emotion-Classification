@@ -3,8 +3,6 @@ import pickle
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
-from emotiondetection import process_text
-
 
 app = Flask(__name__)
 app.config['MONGO_URI'] = 'mongodb+srv://khushi:emotiondetection@cluster0.o6kyn.mongodb.net/mydb?retryWrites=true&w=majority'
