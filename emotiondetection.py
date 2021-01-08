@@ -8,7 +8,6 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 import re
-import pandas as pd
 
 #import libraries and initiate required objects for processing
 tokenizer = nltk.tokenize.TreebankWordTokenizer()

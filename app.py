@@ -25,7 +25,8 @@ def predict():
     if request.method == 'POST':
         message = request.form['message']
         data = [message]
-        my_prediction = loaded_model.predict(process_text(pd.Series(data)))[0]
+        print(data)
+        my_prediction = loaded_model.predict(data)[0]
         emotion = int(my_prediction)
         print(my_prediction)
         emotiondetection.insert_one({'text' : message, 'emotion_prediction' : emotion})
