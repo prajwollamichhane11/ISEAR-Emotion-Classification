@@ -14,6 +14,9 @@ function showPanel(panelIndex,colorcode){
     tabPanels[panelIndex].style.display = "flex"
 }
 
+
 showPanel(0,"#0A92DE")
 
+
+showPanel(0,"#0A92DE")
 
