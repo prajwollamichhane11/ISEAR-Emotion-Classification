@@ -39,3 +39,6 @@ def predict():
 def delete(oid):
     emotiondetection.delete_one({'_id': ObjectId(oid)})
     return redirect(url_for('home'))
+
+if __name__ == '__main__':
+    app.run()
