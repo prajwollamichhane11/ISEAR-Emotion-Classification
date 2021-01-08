@@ -98,7 +98,7 @@ def create_model(embedding_size=100, lstm_size=32, layer1_size=32, dropoutrate=0
     )
     model.add(LSTM(lstm_size, dropout=dropoutrate, recurrent_dropout=dropoutrate))
     model.add(Dense(layer1_size, activation="relu"))
-    model.add(Dropout(dropoutrate, seed=seed))
+    model.add(Dropout(dropoutrate))
     model.add(Dense(7, activation="softmax"))
     optim = optimizers.Adam(
         lr=learning_rate,
