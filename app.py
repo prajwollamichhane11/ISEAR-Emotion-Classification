@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, Blueprint, redirect,url_for
-import pandas as pd
 import pickle
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
