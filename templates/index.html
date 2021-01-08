@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-=======
-
->>>>>>> 72b363b521e4db65a4b34b9a6ca8cf4ac85ffce0
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
-<<<<<<< HEAD
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
 
 </head>
-=======
-</head>
-
->>>>>>> 72b363b521e4db65a4b34b9a6ca8cf4ac85ffce0
 <body>
     <div class="emotion-detection">
         <nav class="nav-top">
@@ -31,11 +22,7 @@
                     <img src="{{ url_for('static', filename='images/presentation (1).png')}}">
                     <div>Fusemachines Training</div>
                 </div>
-<<<<<<< HEAD
             </div>   
-=======
-            </div>
->>>>>>> 72b363b521e4db65a4b34b9a6ca8cf4ac85ffce0
         </nav>
         <div class="middle-content">
             <div class="left-box">
@@ -67,7 +54,6 @@
                         </button>
                     </div>
                     <div class="tabpanel">
-<<<<<<< HEAD
                         <div class="result">
                               <table id="table">
                                 <thead>
@@ -97,82 +83,41 @@
                             <span>joy</span>
                         </div>
                         {% elif prediction == 2%}
-=======
-                        {% if prediction == 0 %}
-                        <div class="emotion-tab">
-                            <img src="{{ url_for('static', filename='images/angry.png')}}">
-                            <span>joy</span>
-                        </div>
-                        {% elif prediction == 1 %}
->>>>>>> 72b363b521e4db65a4b34b9a6ca8cf4ac85ffce0
                         <div class="emotion-tab">
                             <img src="{{ url_for('static', filename='images/crying.png')}}">
                             <span>Fear</span>
                         </div>
-<<<<<<< HEAD
                         {% elif prediction == 0%}
-=======
-                        {% elif prediction == 2 %}
->>>>>>> 72b363b521e4db65a4b34b9a6ca8cf4ac85ffce0
                         <div class="emotion-tab">
                             <img src="{{ url_for('static', filename='images/angry.png')}}">
                             <span>Anger</span>
                         </div>
-<<<<<<< HEAD
                         {% elif prediction == 5%}
-=======
-                        {% elif prediction == 3 %}
->>>>>>> 72b363b521e4db65a4b34b9a6ca8cf4ac85ffce0
                         <div class="emotion-tab">
                             <img src="{{ url_for('static', filename='images/nervous.png')}}">
                             <span> Sadness</span>
                         </div>
-<<<<<<< HEAD
                         {% elif prediction == 1%}
                         <div class="emotion-tab">
                             <img src="{{ url_for('static', filename='images/pain.png')}}">
                             <span>Disjust</span>
                         </div>
                         {% elif prediction == 6%}
-=======
-                        {% elif prediction == 4 %}
-                        <div class="emotion-tab">
-                            <img src="{{ url_for('static', filename='images/happy.png')}}">
-                            <span>Happy</span>
-                        </div>
-                        {% elif prediction == 5 %}
->>>>>>> 72b363b521e4db65a4b34b9a6ca8cf4ac85ffce0
                         <div class="emotion-tab">
                             <img src="{{ url_for('static', filename='images/sad.png')}}">
                             <span>Shame</span>
                         </div>
-<<<<<<< HEAD
                         {% elif prediction == 3%}
-=======
-                        {% elif prediction == 6 %}
->>>>>>> 72b363b521e4db65a4b34b9a6ca8cf4ac85ffce0
                         <div class="emotion-tab">
                             <img src="{{ url_for('static', filename='images/pain.png')}}">
                             <span>Guilt</span>
                         </div>
                         {% endif %}
                     </div>
-<<<<<<< HEAD
-=======
-                    <div class="tabpanel">
-                        <div class="result">
-                            <img src="{{ url_for('static', filename='images/lime-example.jpg')}}">
-                        </div>
-                    </div>
->>>>>>> 72b363b521e4db65a4b34b9a6ca8cf4ac85ffce0
                 </div>
             </div>
         </div>
     </div>
 </body>
 <script src="{{ url_for('static', filename='js/index.js')}}"></script>
-<<<<<<< HEAD
-=======
-
->>>>>>> 72b363b521e4db65a4b34b9a6ca8cf4ac85ffce0
 </html>

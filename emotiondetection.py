@@ -10,11 +10,6 @@ from nltk.stem import WordNetLemmatizer
 import re
 import pandas as pd
 
-le = preprocessing.LabelEncoder()
-
-df =  pd.read_csv('ISEAR.csv', names=['emotion','content'])
-df['emotion'] = le.fit_transform(df['emotion'])
-
 #import libraries and initiate required objects for processing
 tokenizer = nltk.tokenize.TreebankWordTokenizer()
 stop_words = stopwords.words("english")

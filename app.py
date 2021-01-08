@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 from flask import Flask, render_template, request, Blueprint, redirect,url_for
 import pandas as pd
 import pickle
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
-from emotiondetection import process_text, le
+from emotiondetection import process_text
 
 
 app = Flask(__name__)
@@ -40,40 +39,3 @@ def predict():
 def delete(oid):
     emotiondetection.delete_one({'_id': ObjectId(oid)})
     return redirect(url_for('home'))
-=======
-import pickle
-
-from flask import Flask, render_template, request
-
-
-app = Flask(__name__)
-
-
-@app.route("/")
-def home():
-    return render_template("index.html")
-
-
-@app.route("/predict", methods=["POST"])
-def predict():
-
-    # Loading the vectorizer
-    cv = pickle.load(open("../models/vectorizer.pickle", "rb"))
-
-    # Loading the classifier
-    pickleFile = open("../models/nb_Classifier.pickle", "rb")
-    naiveBayesClf = pickle.load(pickleFile)
-
-    if request.method == "POST":
-        message = request.form["message"]
-        usrInp = [message]
-        vect = cv.transform(usrInp)
-        emoPrediction = naiveBayesClf.predict(vect)
-        print(emoPrediction)
-
-    return render_template("index.html", prediction=emoPrediction)
-
-
-if __name__ == "__main__":
-    app.run()
->>>>>>> 72b363b521e4db65a4b34b9a6ca8cf4ac85ffce0
