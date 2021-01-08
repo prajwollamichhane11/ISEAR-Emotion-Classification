@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+
+</head>
+
 </head>
 
 <body>
@@ -22,6 +27,7 @@
                     <img src="{{ url_for('static', filename='images/presentation (1).png')}}">
                     <div>Fusemachines Training</div>
                 </div>
+            </div>   
             </div>
         </nav>
         <div class="middle-content">
@@ -54,6 +60,35 @@
                         </button>
                     </div>
                     <div class="tabpanel">
+                        <div class="result">
+                              <table id="table">
+                                <thead>
+                                    <tr>
+                                        <th>Text</th>
+                                        <th>Emotion Prediction</th>
+                                        <th>Delete</th>
+                                      </tr>
+                                </thead>
+                                <tbody>
+                                    {%for data in emotiondetection%}
+                                    <tr>
+                                        <td>{{data.text}}</td>
+                                        <td>{{data.emotion_prediction}}</td>
+                                        <td><a type="button" href="{{ url_for('delete',oid=data._id ) }}" ><img src="{{ url_for('static', filename='images/trashed.png')}}"></a></td>
+                                      </tr>
+                                      {%endfor%}
+                                </tbody>
+                              </table>
+                
+                        </div>
+                    </div>
+                    <div class="tabpanel">
+                        {% if prediction == 4%}
+                        <div class="emotion-tab">
+                            <img src="{{ url_for('static', filename='images/happy.png')}}">
+                            <span>joy</span>
+                        </div>
+                        {% elif prediction == 2%}
                         {% if prediction == 0 %}
                         <div class="emotion-tab">
                             <img src="{{ url_for('static', filename='images/angry.png')}}">
@@ -64,16 +99,25 @@
                             <img src="{{ url_for('static', filename='images/crying.png')}}">
                             <span>Fear</span>
                         </div>
+                        {% elif prediction == 0%}
+
                         {% elif prediction == 2 %}
                         <div class="emotion-tab">
                             <img src="{{ url_for('static', filename='images/angry.png')}}">
                             <span>Anger</span>
                         </div>
+                        {% elif prediction == 5%}
                         {% elif prediction == 3 %}
                         <div class="emotion-tab">
                             <img src="{{ url_for('static', filename='images/nervous.png')}}">
                             <span> Sadness</span>
                         </div>
+                        {% elif prediction == 1%}
+                        <div class="emotion-tab">
+                            <img src="{{ url_for('static', filename='images/pain.png')}}">
+                            <span>Disjust</span>
+                        </div>
+                        {% elif prediction == 6%}
                         {% elif prediction == 4 %}
                         <div class="emotion-tab">
                             <img src="{{ url_for('static', filename='images/happy.png')}}">
@@ -84,6 +128,8 @@
                             <img src="{{ url_for('static', filename='images/sad.png')}}">
                             <span>Shame</span>
                         </div>
+                        {% elif prediction == 3%}
+
                         {% elif prediction == 6 %}
                         <div class="emotion-tab">
                             <img src="{{ url_for('static', filename='images/pain.png')}}">
@@ -91,11 +137,13 @@
                         </div>
                         {% endif %}
                     </div>
+
                     <div class="tabpanel">
                         <div class="result">
                             <img src="{{ url_for('static', filename='images/lime-example.jpg')}}">
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
