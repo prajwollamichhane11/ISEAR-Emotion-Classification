@@ -5,9 +5,6 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-print(__name__)
-print(app)
-
 
 @app.route("/")
 def home():
@@ -18,10 +15,10 @@ def home():
 def predict():
 
     # Loading the vectorizer
-    cv = pickle.load(open("./models/vectorizer.pickle", "rb"))
+    cv = pickle.load(open("../models/vectorizer.pickle", "rb"))
 
     # Loading the classifier
-    pickleFile = open("./models/nb_Classifier.pickle", "rb")
+    pickleFile = open("../models/nb_Classifier.pickle", "rb")
     naiveBayesClf = pickle.load(pickleFile)
 
     if request.method == "POST":
